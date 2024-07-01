@@ -1,0 +1,9 @@
+p{
+    text-align: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    color: white;
+    width: 100%;
+}
