@@ -3,8 +3,8 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <div>
-      <p>Copyright Praj coding. All rights reserved. </p>
+    <div className='footer'>
+      Copyright &copy; Praj coding. All rights reserved.
     </div>
   )
 }

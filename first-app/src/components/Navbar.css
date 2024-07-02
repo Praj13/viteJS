@@ -1,5 +1,6 @@
 nav, ul{
     display: flex;
+    font-size: 20px;
 }
 
 li{
