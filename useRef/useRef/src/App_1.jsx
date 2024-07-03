@@ -5,14 +5,26 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const btnRef=useRef()
-  const btn2Ref=useRef()
-  useEffect(() => {
-    console.log(`rerendering`);
-    btnRef.current.style.backgroundColor="red";
-    btn2Ref.current.style.backgroundColor="red";
 
-  }),[];
+  // using normal js variable
+  // let a=1;
+  // useEffect(() => {
+    // a=a+1;
+  //   console.log(`rerendering and the value of a is ${a}`);
+  // //here the value of a will be 1 whenever the components rerender. to overcome this prblm we have useRef
+   
+  // });
+
+
+
+  //now using useRef
+  const a=useRef(0)
+  useEffect(() => {
+    a.current=a.current+1;
+    console.log(`rerendering and the value of a is ${a.current}`);
+  //here the value of a will be 1 whenever the components rerender. to overcome this prblm we have useRef
+   
+  });
   
 
   return (
@@ -27,7 +39,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button ref={btnRef} onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
         <p>
@@ -37,9 +49,6 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <button ref={btn2Ref} onClick={()=>{
-        btnRef.current.style.display="none";
-      }}>Click me to make count button invisible</button>
     </>
   )
 }
